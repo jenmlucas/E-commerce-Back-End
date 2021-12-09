@@ -16,8 +16,8 @@ Clone the repo, then do "npm install". Change your password in the .env file. Th
 
 ## Usage
 This is what it will look like on your device. 
-[Screencastify](https://watch.screencastify.com/v/VqM77zul8X8l4X17oouz)
-![Employee Tracker](images/screencastify.png)
+[Screencastify](https://watch.screencastify.com/v/SE05c5dCk08aoj012U1r)
+![E-commerce](images/screencastify.png)
 
 ## License 
 N/A
