@@ -8,7 +8,7 @@ router.get('/', (req, res) => {
   // be sure to *include its associated Product data
   //through 
   Tag.findAll({include: [Product],
-    through: Product,
+    through: ProductTag,
   })
   .then(tagProduct => res.json(tagProduct))
   .catch(err => {
@@ -20,9 +20,17 @@ router.get('/:id', (req, res) => {
   // find a single tag by its `id`
   // be sure to *include its associated Product data
   //through
-  Tag.findOne({include: [Product],
-    through: Product,
-  })
+  Tag.findOne({
+    where: {
+      id: req.params.id
+    },
+    include: [
+      {
+      model: Product,
+    through: ProductTag,
+      },
+  ],
+})
   .then(tagProduct => res.json(tagProduct))
   .catch(err => {
     res.status(500).json(err);
