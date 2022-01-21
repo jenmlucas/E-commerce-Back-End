@@ -25,6 +25,9 @@ router.get('/:id', (req, res) => {
   //through
   Product.findOne({include: [Category, Tag],
     through: ProductTag,
+    where: {
+      id: req.params.id
+    },
   })
   .then(product => res.json(product))
   .catch(err => {
